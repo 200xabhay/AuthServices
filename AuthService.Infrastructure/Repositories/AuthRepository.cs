@@ -102,5 +102,12 @@ namespace AuthService.Infrastructure.Repositories
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+        public async Task<List<User>> GetAllUsers()
+        {
+            var users =await _context.Users.ToListAsync();
+            
+            return users;
+        }
     }
 }

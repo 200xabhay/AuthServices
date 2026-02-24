@@ -1,5 +1,6 @@
 ﻿using AuthService.Application.DTOs;
 using AuthService.Application.Interfaces;
+using AuthService.Domain.Models;
 using CryptoHub.Application.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -42,10 +43,12 @@ namespace AuthService.Api.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> Test()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok("Testing");
+            var users =await _auth.GetAllUsers();
+
+            var response = ApiResponse<List<User>>.SuccessResponse(users, "User Get successfully");
+            return Ok(response);
         }
     }
 }

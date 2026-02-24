@@ -12,8 +12,8 @@ namespace AuthService.Api.SeedData
             var roles = new List<Role>
                 {
                     new Role { RoleName = "Admin", CreatedBy = 1 },
-                    new Role {RoleName ="CBI Officer", CreatedBy =1},
-                    new Role {RoleName ="User", CreatedBy=1},
+                    new Role {RoleName ="Officer", CreatedBy =1},
+                    new Role {RoleName ="Customer", CreatedBy=1},
                                 
                  };
 

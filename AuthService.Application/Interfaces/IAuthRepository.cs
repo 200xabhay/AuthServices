@@ -11,6 +11,8 @@ namespace AuthService.Application.Interfaces
     public interface IAuthRepository
     {
 
+        Task<List<User>> GetAllUsers();
+
         Task<LoginResponseDto> LoginAsync(LoginRequestDto loginRequestDto);
 
         Task<RegisterResponseDto> RegisterAsync(RegisterRequestDto registerRequestDto);
